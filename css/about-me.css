@@ -1,0 +1,465 @@
+/* MAIN CONTENT */
+
+.Main{
+    padding-top: 8rem;
+}
+
+.Section{
+    width: 100%;
+    padding: 3rem 12.5rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3.125rem;
+
+}
+
+/* SECTION ABOUT */
+
+/* Introduction */
+
+.Section-h1{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Content */
+
+.Section-content{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Personal image */
+
+.Section-image{
+    width: 35%;
+}
+
+.Image{
+    border: 1px solid var(--secondary-color);
+    border-radius: 1.25rem;
+}
+
+/* Text presentation */
+
+.Section-text{
+    width: 60%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+
+/* SECTION CURRICULUM */
+
+/* Introduction */
+
+.Section-h2{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Section-tabs */
+
+.Section-tabs{
+    width: 100%;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    gap: 2rem; /* Espaciado entre la cuadrícula de header y la cuadricula de content */
+}
+
+/* Header tabs */
+
+.Tabs-header{
+    width: 25%; /* Ajusta el ancho de las pestañas */
+    background-color: #fff;
+    padding: 1.5rem;
+
+    border: 1px solid var(--secondary-color);
+    border-radius: 1.875rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: 1rem;   
+}
+
+.Tab-link{
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer; /* Habilita la mano al pasar por encima */
+    transition: 0.3s ease, color 0.3s ease;
+}
+
+.Tab-link:hover{
+    background-color: var(--primary-color-opacity-1);
+    color: var(--secondary-color);
+}
+
+.Tab-link.isActive{
+    font-weight: bold;
+    color: var(--secondary-color);
+    background-color: var(--primary-color-opacity-1);
+}
+
+/* Tabs content */
+
+.Tabs-content{
+    width: 75%; /* Resto del espacio para el contenido */
+    height: 42rem;
+    background-color: #fff;
+    padding: 2rem;
+    
+    border: 1px solid var(--secondary-color);
+    border-radius: 1.875rem;
+}
+
+.Tab-content{
+    display: none;
+}
+
+.Tab-content.isActive{
+    display: block;
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.Tab-description{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.Tab-item{
+    padding: 1rem;
+}
+
+.date{
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.title{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.company{
+    font-size: 0.9rem;
+    color: var(--color-base-700);
+}
+
+.description{
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Skills */
+
+.Tab-details--skills{
+    display: flex;
+    flex-flow: column  nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5625rem;
+}
+
+.Tab-column{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+.List-item{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+}
+
+.Skills-item{
+    padding: 0.3rem 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 1.875rem;
+
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Tools */
+
+.Tab-details--tools{
+    padding: 5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4.6875rem;
+}
+
+.Tools-item{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    align-content: center;
+}
+
+.Tools-icon{
+    height: 2.5rem;
+}
+
+/* Section button */
+
+.Section-button{
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 1.875rem;
+    padding: .625rem 1.875rem;
+
+    display: inline-flex;
+    gap: .3125rem;
+    
+    font-weight: bold;
+    text-transform: uppercase;
+
+    transition: background-color 0.3s ease;
+}
+
+.Section-button:hover{
+    background-color: var(--secondary-color);
+}
+
+.Section-button::after{
+    content: "🡢";
+    font-size: 1rem;
+    color: var(--background-color);
+}
+
+
+/* SECTION PERSONAL */
+
+/* Introduction */
+
+.Section-introduction{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.875rem;
+}
+
+.Section-description{
+    text-align: center;
+}
+
+/* Activities */
+
+.Content-activities{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5625rem;
+}
+
+.Activity-item{
+    min-height: 9.375rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+    gap: .625rem    
+}
+
+.Activity-image{
+    border-radius: 1.25rem;
+}
+
+/* Media Queries */
+
+/* Móviles */
+@media (max-width: 768px){
+    
+    h1{
+        font-size: 2.5rem;
+    }
+
+    h2{
+        font-size: 1.5rem;
+    }
+
+    h3{
+        font-size: 1rem;
+    }
+
+    .Main{
+        padding-top: 5rem;
+    }
+
+    .Section{
+        padding: 3rem 2rem;
+    }
+
+    .Section-content{
+        flex-flow: column nowrap;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .Section-image{
+        width: 90%;
+        max-width: 18.75rem;
+    }
+
+    .Section-text{
+        width: 100%;
+        text-align: center;
+    }
+
+    .Section-tabs{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .Tabs-header{
+        width: 100%;
+        flex-flow: row wrap;
+    }
+
+    .Tab-link{
+        padding: 0.5rem;
+    }
+    
+    .Tabs-content{
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .Tab-details--tools{
+        padding: 2rem;
+        gap: 3rem;
+    }
+
+    .Tools-icon{
+        height: 1.5rem;
+    }
+
+    .Content-activities{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .Activity-item{
+        width: 100%;
+    }
+
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px){
+
+    h1{
+        font-size: 2.5rem;
+    }
+
+    h2{
+        font-size: 1.5rem;
+    }
+
+    h3{
+        font-size: 1rem;
+    }
+
+    .Section{
+        padding: 3rem 2rem;
+    }
+
+    .Section-content{
+        align-items: flex-start;
+    }
+
+    .Section-image{
+        width: 40%;
+    }
+
+    .Section-text{
+        width: 55%;
+        gap: 1rem;
+    }
+
+    .Section-tabs{
+        flex-flow: column;
+    }
+
+    .Tabs-header{
+        width: 100%;
+        flex-flow: row wrap;
+    }
+    
+    .Tabs-content{
+        width: 100%;
+        height: auto;
+    }
+
+    .Tab-details--tools{
+        padding: 2rem;
+        gap: 3rem;
+    }
+
+    .Footer{
+        padding: 5rem 2rem;
+    }
+}
+
+/* Laptops en adelante */
+@media (min-width: 1025px) and (max-width: 1328px){
+
+    .Section{
+        padding: 3rem 5rem;
+    }
+
+    .Section-content{
+        align-items: flex-start;
+    }
+
+    .Section-image{
+        width: 30%;
+    }
+
+    .Section-text{
+        width: 65%;
+    }
+
+    .Tab-link{
+        font-size: 1rem;
+    }
+    
+    .Tabs-content{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 1329px){
+    
+    .Tabs-content{
+        width: 100%;
+        height: 44rem;
+    }
+}

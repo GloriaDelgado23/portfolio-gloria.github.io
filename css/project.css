@@ -1,0 +1,453 @@
+/* Encabezados */
+h1, h2, h3, h4, h5, h6{
+    text-align: left;
+}
+
+/* MAIN */
+
+.Main{
+    padding-top: 5rem;
+}
+
+/* HERO */
+
+.Hero{
+    width: 100%;
+    padding: 6.25rem 12.5rem 3.125rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3.125rem;
+}
+
+/* Image */
+
+.Hero-image{
+    width: 100%;
+}
+
+
+/* Project nav menu */
+
+.Hero-navMenu{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Hero-menuLink{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Hero-menuLink::after{
+    content: "/";
+    font-size: 1rem;
+}
+
+.Hero-menuLink.isActive{
+    color: var(--primary-color);
+}
+
+/* Description */
+
+.Hero-description{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: .625rem;
+}
+
+.Hero-descriptionSecondary{
+    text-align: left;
+}
+
+/* Details */
+
+.Hero-details{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.Hero-detailsTitle{
+    text-transform: uppercase;
+}
+
+
+/* SECTIONS */
+
+.Section{
+    width: 100%;
+    padding: 3.125rem 12.5rem;
+
+    scroll-margin-top: 5rem; /* Esto me va a permitir que cuando haga clic en el ancla del menú interno de los proyectos, este vaya al lugar correcto, ya que si no quedaría por debajo del menú principal que está en fixed */
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3.125rem;
+}
+
+/* Title */
+.Section-h2{
+    width: 100%;
+}
+
+/* Highlighted */
+.Section-highlighted{
+    width: 100%;
+    padding: 3.125rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.25rem;
+
+    border-radius: 1.25rem;
+    border: .125rem dashed var(--primary-color);
+}
+
+.Section-highlightedItem::before{
+    content: "•";
+    margin-right: 0.5rem; /* Espacio entre el punto y el texto */
+}
+
+/* Steps */
+.Section-step{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.875rem;
+}
+.Section-stepH3{
+    text-transform: uppercase;
+}
+.Section-stepMethodology{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.875rem;
+}
+.Methodology-title{
+    font-weight: 600;
+}
+
+.Methodology-image{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.875rem;
+}
+
+.Methodology-imageImg{
+    width: 100%;
+    transition: transform 0.3s ease-in-out; /* Transición suave para el efecto */
+}
+
+.Methodology-imageImg.isActive{
+    transform: scale(1.10); /* Aumentar tamaño al 110% */
+}
+
+.alt{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.Methodology-video{
+    /* width: 100%; */
+}
+    
+
+/* Secondary button */
+
+.Secondary-button{
+    background-color: var(--primary-color-opacity-1);
+    color: var(--secondary-color);
+    padding: .625rem 1.875rem;
+    border-radius: 1.875rem;
+    
+    display: inline-flex;
+    gap: .3125rem;
+
+    transition: background-color 0.3s ease;
+}
+
+.Secondary-button:hover{
+    background-color: var(--primary-color-opacity-2);
+}
+
+.Secondary-button::after{
+    content: "🡥";
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+
+/* Botón de volver arriba */
+
+.BackToTop{
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 2rem; /* Distancia desde la parte inferior */
+    right: 2rem; /* Distancia desde la parte derecha */
+    
+    color: var(--background-color);
+    
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0; /* Oculto por defecto */
+    visibility: hidden;
+    z-index: 10;
+}
+
+.BackToTop:hover{
+    transform: scale(1.1);
+}
+
+.BackToTop.isVisible{
+    opacity: 1; /* Mostrar el botón */
+    visibility: visible;
+}
+
+
+/* Media Queries */
+
+/* Móviles */
+@media (max-width: 768px){
+
+    h1{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    h2{
+        font-size: 1.5rem;
+    }
+
+    h3{
+        font-size: 1rem;
+    }
+
+    .Hero{
+        padding: 4rem 2rem;
+    }
+
+    .Hero-header{
+        width: 100%;
+    }
+
+    .Hero-navMenu{
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .Hero-menuLink{
+        font-size: 1rem;
+    }
+
+    .Hero-imageImg{
+        width: 100%;
+    }
+
+    .Hero-description{
+        gap: 0.5rem;
+    }
+
+    .Hero-details{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .Hero-detailsSection{
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .Hero-detailsItem{
+        text-align: center;
+    }
+
+    .Section{
+        padding: 4rem 2rem;
+    }
+
+    .Section-h2{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Section-title{
+        text-align: center;
+    }
+
+    .Section-highlighted{
+        padding: 2rem;
+    }
+
+    .Section-stepMethodology{
+        gap: 1rem;
+    }
+
+    .Methodology-imageImg{
+        width: 100%;
+    }
+
+    .BackToTop{
+        width: 2.5rem;
+        height: 2.5rem;
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px){
+
+    h1{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    h2{
+        font-size: 1.5rem;
+    }
+
+    h3{
+        font-size: 1rem;
+    }
+
+    .Hero{
+        padding: 4rem 2rem;
+    }
+
+    .Hero-header{
+        width: 100%;
+    }
+
+    .Hero-navMenu{
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .Hero-menuLink{
+        font-size: 1.25rem;
+    }
+
+    .Hero-imageImg{
+        width: 100%;
+    }
+
+    .Hero-details{
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .Section{
+        padding: 3rem 2rem;
+    }
+
+    .Section-highlighted{
+        padding: 2.5rem;
+    }
+
+    .Section-stepMethodology{
+        gap: 1.25rem;
+    }
+
+    .Methodology-imageImg{
+        width: 100%;
+    }
+
+    .BackToTop{
+        width: 3rem;
+        height: 3rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+/* Laptops en adelante */
+@media (min-width: 1025px) and (max-width: 1328px){
+
+    .Hero{
+        padding: 4rem 6rem;
+    }
+
+    .Hero-title{
+        font-size: 3rem;
+    }
+
+    .Hero-navMenu{
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .Hero-menuLink{
+        font-size: 1.25rem;
+    }
+
+    .Hero-imageImg{
+        margin: 0 auto;
+    }
+
+    .Hero-details{
+        gap: 3rem;
+    }
+
+    .Section{
+        padding: 4rem 6rem;
+    }
+
+    .Section-highlighted{
+        padding: 3rem;
+    }
+
+    .Section-stepMethodology{
+        gap: 1.5rem;
+    }
+
+    .Methodology-imageImg{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .BackToTop{
+        width: 3.5rem;
+        height: 3.5rem;
+        bottom: 2rem;
+        right: 2rem;
+    }
+}

@@ -1,0 +1,285 @@
+/* MAIN CONTENT*/
+
+/* HERO SECTION */
+
+.Hero{
+    width: 100%;
+    min-height: 100vh;
+    padding: 12.5rem;
+    border-bottom: 1px solid var(--secondary-color);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;  
+    gap: 3.125rem;  
+}
+
+/* Video */
+
+.Hero-background{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que el video cubra todo el contenedor sin deformarse */
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    z-index: -1; /* Pone el video en el fondo */
+    opacity: 0.2; /* Transparencia del 20% */
+}
+
+/* Hero content */
+
+.Hero-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3.125rem;
+}
+
+.Hero-title{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Hero-titlePrimary{
+    font-size: 4.375rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.Hero-titleSecondary{
+    font-size: 3.75rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.Hero-description{
+    font-size: var(--font-header3);
+    color: var(--text-color);
+}
+
+/* Arrow */
+
+.Hero-arrow{
+    position: absolute;
+    bottom: 2rem; /* Ajusta la posición de la flecha */
+    left: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transform: translateX(-50%);
+    animation: fadeInDown 1.5s infinite;
+}
+
+.Arrow-icon{
+    width: 3rem;
+    height: 3rem;
+    stroke: var(--secondary-color); /* Color de la línea de la flecha */    
+}
+
+/* Animación de fadeInDown, que hace que el elemento al que se aplica se desplace hacia abajo */
+/* Defino la animación fadeInDown: 
+    - Al principio de la animación, el elemento está invisible y se desplaza verticalmente
+    - Después avanza la animación y se desplaza hacia abajo y asu vez la opacidad va aumentando
+    - Finalmente, el elemento llega a su posición final y se muestra completamente visible*/
+@keyframes fadeInDown{
+    0%{
+        opacity: 0;
+        transform: translate(-50%, -1.25rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* WORK SECTION */
+
+.Section--work{
+    width: 100%;
+    padding: 6.25rem 12.5rem;
+
+    scroll-margin-top: 5rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3.125rem; 
+}
+
+.Section-introduction{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.875rem;
+}
+
+.Section-h2{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Section-description{
+    text-align: center;
+}
+
+/* Section cards */
+
+.Section-grid{
+    width: 100%;
+    max-width: 65rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(500px, 1fr)); /* Dos columnas con ancho mínimo de 500px */
+    gap: 1.875rem; /* Espaciado entre cards */
+}
+
+/* Cards */
+
+.Card{
+    width: 100%;
+    height: 50rem;
+
+    
+    background-size: cover; /* Tamaño inicial para evitar que el fondo sea pequeño */
+    background-repeat: no-repeat; /* Asegura que no se repita el fondo */
+    background-position: center; /* Centra el fondo */
+    padding: 1.5625rem;
+
+    border: 1px solid var(--secondary-color);
+    border-radius: 1.875rem;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.25rem;
+
+    transition: transform 0.3s ease-in-out;
+}
+
+.Card-title{
+    text-align: left;
+}
+
+.Card-label{
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: .3125rem;
+    padding: .3125rem;
+}
+
+.Card-link{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.Card-linkIcon{
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.Card-link:hover{
+    color: var(--primary-color);
+}
+
+.Card.isActive{
+    transform: scale(1.05);
+}
+
+.Card--1{
+    background-image: url('../assets/index/portada-card-proyecto-plantilla.svg');
+}
+
+.Card--2{
+    background-image: url('../assets/index/portada-card-proyecto-planeat.svg');
+}
+
+
+/* Media Queries */
+
+/* Móviles */
+@media (max-width: 768px){
+      
+    .Hero{
+      padding: 2rem 1rem 0rem;
+    }
+
+    .Hero-content{
+        min-height: 225px;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .Hero-titlePrimary{
+      font-size: 2.5rem;
+    }
+  
+    .Hero-titleSecondary{
+      font-size: 1.7rem;
+    }
+  
+    .Hero-description{
+      font-size: 1rem;
+      text-align: center;
+    }
+  
+    .Section--work{
+      padding: 4rem 2rem;
+    }
+  
+    .Section-grid{
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+  }
+
+  
+/* Tablets en adelante */
+@media (min-width: 769px){
+    
+    .Hero{
+      padding: 4rem 2rem;
+    }
+
+    .Hero-titlePrimary{
+      font-size: 3rem;
+    }
+
+    .Hero-titleSecondary{
+      font-size: 2.5rem;
+    }
+
+    .Hero-description{
+      font-size: 1.25rem;
+      text-align: center;
+    }
+
+    .Section--work{
+      padding: 4rem 2rem;
+    }
+
+    .Section-grid{
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+}
+  

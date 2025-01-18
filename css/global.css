@@ -1,0 +1,255 @@
+/* HEADER */
+
+.Header{
+    width: 100%;    
+    background-color: var(--background-color);
+
+    padding: 1.5rem 3rem;
+    border-bottom: 1px solid var(--secondary-color);
+
+    position: fixed;
+    z-index: 1;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Menú */
+
+.Header-menu{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.Header-menuLink{
+    position: relative; /*Este tiene que llevar position: relative porque .Header-menuLink::after tiene position: absolute y, por tanto, su contenedora tiene que ser relative*/
+    text-transform: uppercase;
+    color: var(--secondary-color);
+}
+
+.Header-menuLink:hover, .Header-menuLink.isActive{
+    color: var(--primary-color);
+}
+
+.Header-menuLink.isActive{
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Selector de idioma y CTA */
+
+.Header-options{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Selector de idiomas */
+
+.Header-optionsLanguage{
+    color: var(--secondary-color);
+    margin-right: .625rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: calc(var(--spacing) / 2);
+}
+
+/* CTA */
+.Header-optionsButton{
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: .625rem 1.875rem;
+    border: none;
+    border-radius: 1.875rem;
+
+    font-weight: bold;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Header-optionsButton:hover{
+    background-color: var(--secondary-color);
+}
+
+/* Hamburger nav */
+.Header-hamburger{
+    background: none;
+    margin: 0 auto 0 0;
+    display: none;
+}
+
+/* FOOTER */
+
+.Footer{
+    width: 100%;
+    padding: 6.25rem 12.5rem;
+    border-top: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Footer-content{
+    width: 100%;
+    max-width: 64rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4.375rem;
+    color: var(--secondary-color);
+}
+
+/* Copyright */
+
+.Footer-copyright{
+    width: 100%;
+}
+
+/* Social media items */
+
+.Footer-social{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.Footer-socialIcon{
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--secondary-color); /* Color inicial */
+    transition: fill 0.3s ease-in-out; /* Transición suave */
+}
+
+.Footer-socialIcon.isActive{
+    fill: var(--primary-color); /* Color al pasar el mouse */
+}
+
+
+/* CONTENT SCROLL TEXT */
+
+.Content-scroll{
+    width: 100%;
+    height: 6.25rem;
+    overflow: hidden; /* Ocultar texto que sale del contenedor */
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.Content-scrollWrapper{
+    display: flex;
+    white-space: nowrap; /* Evitar saltos de línea */
+    position: absolute;
+}
+
+.Content-scrollText{
+    margin-right: 10px; /* Espaciado entre textos */
+    color: var(--secondary-color);
+    font-size: var(--font-header1);
+    text-transform: capitalize;
+    letter-spacing: 0.1em;
+}
+
+/* Media Queries global*/
+
+/* Móviles */
+@media (max-width: 768px){
+    
+    h2{
+        font-size: 1.5rem;
+    }    
+    
+    .Header-logo{
+        width: 100%;
+    }
+
+    .Header-logoImg{
+        width: 4rem;
+        height: 2rem;
+    }
+
+    .Header-menu{
+        display: none;
+    }
+  
+    .Header-hamburger{
+        display: block;
+    }
+
+    .Hamburger-icon{
+        width: auto;
+    }
+
+    .Header-nav.is-open .Header-menu{
+        width: 100%;
+        height: 100vh;
+        background-color: var(--background-color);
+        padding: 1rem;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        gap: 1rem;
+        
+        position: absolute;
+        top: 100%;
+        left: 0;
+        
+        border-top: 1px solid var(--secondary-color);
+    }
+
+    .Header-optionsButton{
+        display: none;
+    }
+
+    .Footer{
+        padding: 4rem 2rem;
+    }
+  
+    .Footer-content{
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .Footer-copyright{
+        text-align: center;
+    }
+
+    .Footer-social{
+      justify-content: center;
+    }
+
+    .Content-scrollText{
+        font-size: 2.5rem;
+    }
+  }
+
+  
+/* Tablets en adelante */
+@media (min-width: 769px){
+    
+    .Footer{
+        padding: 5rem 2rem;
+    }
+}
+  
