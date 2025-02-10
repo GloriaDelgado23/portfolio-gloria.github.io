@@ -176,7 +176,8 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .Methodology-video{
-    /* width: 100%; */
+    width: 100%;
+    max-width: max-content;
 }
     
 
@@ -187,6 +188,7 @@ h1, h2, h3, h4, h5, h6{
     color: var(--secondary-color);
     padding: .625rem 1.875rem;
     border-radius: 1.875rem;
+    text-align: center;
     
     display: inline-flex;
     gap: .3125rem;

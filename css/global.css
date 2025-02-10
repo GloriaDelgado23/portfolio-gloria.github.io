@@ -168,6 +168,30 @@
     letter-spacing: 0.1em;
 }
 
+
+/* Personalización del cursor */
+.Custom-cursor {
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Estado del cursor sobre enlaces clicables */
+.Custom-cursor.isHover {
+    transform: translate(-50%, -50%) scale(2.5); /* Agranda el cursor */
+    background-color: var(--primary-color-opacity-2); /* Cambia el color si lo deseas */
+}
+
+
+
 /* Media Queries global*/
 
 /* Móviles */

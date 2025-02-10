@@ -181,3 +181,52 @@ if (hamburgerButton && navMenu){
     console.error("No se encontraron el botón de hamburguesa o el menú en el DOM")
 }
 
+
+
+// TAREA 5: crear un cursor que se haga más grande al pasar por elementos clicables
+
+// 1). Incluir/definir los elementos que participan en esta funcionalidad:
+// - ¿QUÉ?: el cursor
+// - ¿QUÉ?: los enlaces clicables y sus contenedores
+
+// Crear el elemento del cursor
+const customCursor = document.createElement('div')
+// Aquí le indico al navegador que cree un nuevo elemento <div> y lo guarde en la constante customCursor.
+customCursor.classList.add('Custom-cursor')
+// Agrego la clase .Custom-cursor al nuevo <div> para que tenga el estilo definido en CSS.
+document.body.appendChild(customCursor)
+// Inserto el <div> dentro del <body> para que aparezca en la página.
+
+// 2). Verificar que el cursor se mueve con el mouse:
+// - Propiedad que cambia: la posición del cursor
+// - Condición: se actualiza cada vez que el mouse se mueve
+
+// Mover el cursor con el mouse
+document.addEventListener('mousemove', (e) => {
+    customCursor.style.left = e.clientX + 'px' // Posición horizontal
+    customCursor.style.top = e.clientY + 'px' // Posición vertical
+    // Aquí actualizo la posición del cursor para que siempre siga al mouse.
+})
+
+// 3). Pensar en las acciones y cuándo ocurren:
+// - ¿QUÉ?: cambiar el tamaño del cursor al pasar sobre elementos clicables
+// - ¿CUÁNDO?: cuando el mouse pasa por encima de un enlace clicable o su contenedor
+
+// Detectar si el cursor está sobre un enlace clicable
+document.querySelectorAll('a').forEach((link) => {
+    // Recorro todos los elementos <a> en la página.
+
+    // Agrandar el cursor al pasar el mouse sobre un enlace
+    link.addEventListener('mouseenter', () => {
+        customCursor.classList.add('isHover')
+        // Aquí le digo al navegador que al pasar por encima de un enlace, agregue la clase .isHover al cursor.
+    })
+
+    // Devolver el tamaño del cursor al quitar el mouse
+    link.addEventListener('mouseleave', () => {
+        customCursor.classList.remove('isHover')
+        // Aquí le digo al navegador que al salir del área del enlace, quite la clase .isHover para volver al tamaño del cursor.
+    })
+})
+
+
